@@ -1,0 +1,7 @@
+version: '3'
+services: 
+  server:
+    restart: "no"
+    environment: 
+      - NODE_ENV=test
+      - DB_NAME=jewelry-test

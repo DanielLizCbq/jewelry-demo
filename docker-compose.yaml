@@ -1,0 +1,20 @@
+version: '3'
+services:
+  server:
+    image: node:14.15.1
+    volumes:
+      - ./server:/server
+    working_dir: /server
+    command: bash ./server.sh
+    environment: 
+      - DB_NAME=jewelry-dev
+      - DB_HOST=mongodb://db/
+      - APP_PORT=3000
+    ports:
+      - "3000:3000"
+    depends_on:
+      - db
+    restart: always
+  db:
+    image: mongo:3.6.8
+    restart: always

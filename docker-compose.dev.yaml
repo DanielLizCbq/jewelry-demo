@@ -1,0 +1,9 @@
+version: '3'
+services: 
+  server:
+    environment: 
+      - NODE_ENV=dev
+      - DB_NAME=jewelry-dev
+  db:
+    ports:
+      - 27018:27017
